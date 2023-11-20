@@ -12,18 +12,31 @@ import java.util.List;
 @RestController
 public class WebController {
 
+//    @CrossOrigin
+//    @RequestMapping(value = "/workpro", method = RequestMethod.GET)
+//    public List<String[]> conectaAngular() {
+//        System.out.println("Conectando ao Banco");
+//
+//        Conecta con = new Conecta();
+//        Connection connection = con.connectionMySql();
+//
+//        List<String[]> post = con.getPosts();
+//        System.out.println(post);
+//
+//        con.closeConnectionMySql(connection);
+//        return post;
+//    }
+
     @CrossOrigin
-    @RequestMapping(value = "/workpro", method = RequestMethod.GET)
-    public List<String[]> conectaAngular() {
+    @RequestMapping(value = "/workpro", method = RequestMethod.POST)
+    public void conectaAngular(String text, String date) {
         System.out.println("Conectando ao Banco");
 
         Conecta con = new Conecta();
         Connection connection = con.connectionMySql();
 
-        List<String[]> post = con.getPosts();
-        System.out.println(post);
-
+        con.postPost(text, date);
+        System.out.println("Post: " + text + ", " + date + "\n Postado com sucesso!");
         con.closeConnectionMySql(connection);
-        return post;
     }
 }

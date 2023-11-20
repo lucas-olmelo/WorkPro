@@ -9,6 +9,7 @@ import { HeaderComponent } from './components/header/header.component';
 import { HomeComponent } from './pages/home/home.component';
 import { UserPostComponent } from './components/userPost/userPost.component';
 import { CommunityPostComponent } from './components/community-post/community-post.component';
+import { ProfileComponent } from './pages/profile/profile.component';
 
 @NgModule({
   declarations: [
@@ -16,7 +17,8 @@ import { CommunityPostComponent } from './components/community-post/community-po
     HeaderComponent,
     HomeComponent,
     UserPostComponent,
-    CommunityPostComponent
+    CommunityPostComponent,
+    ProfileComponent
   ],
   imports: [
     BrowserModule,
