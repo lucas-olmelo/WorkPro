@@ -11,7 +11,7 @@ public class Conecta {
     private static String database = "workpro";
     private static String LINK = "jdbc:mysql://" + localBD + ":3306/" + database;
     private static final String usuario = "root";
-    private static final String senha = "melo";
+    private static final String senha = "Senai123";
 
     // Método para fazer a conexão com um banco de dados MySql
     public Connection connectionMySql() {
@@ -58,7 +58,7 @@ public class Conecta {
                 int userId = result.getInt("userId");
 
                 String query = "SELECT * FROM user WHERE id = ?";
-                preparedStmt = connection.prepareStatement(sql);
+                preparedStmt = connection.prepareStatement(query);
                 preparedStmt.setInt(1, userId);
                 ResultSet rs = preparedStmt.executeQuery();
 
@@ -97,5 +97,37 @@ public class Conecta {
             e.printStackTrace();
         }
 
+    }
+    
+    public String dataBaseSelect(int id) {
+        Connection connection = connectionMySql();
+        String x = "";
+        String sql = "SELECT * FROM user WHERE userId = ?";
+
+        PreparedStatement preparedStmt;
+        try {
+            preparedStmt = connection.prepareStatement(sql);
+
+            //Efetua a troca do '?' pelos valores na query
+            preparedStmt.setInt(1, id);
+            ResultSet result = preparedStmt.executeQuery();
+
+            //valida resultado
+            while (result.next()) {                
+                String name = result.getString("name");
+                String surname = result.getString("surname");                
+                String email = result.getString("email");
+
+                System.out.println("cod: " + id);
+                System.out.println("name: " + name + " " + surname);
+                System.out.println("email : " + email);
+                x = name + " " + surname;
+            }
+
+        } catch (SQLException e) {
+            // TODO Auto-generated catch block
+            e.printStackTrace();
+        }
+        return x;
     }
 }
