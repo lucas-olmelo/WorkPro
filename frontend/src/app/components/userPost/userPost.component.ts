@@ -14,7 +14,7 @@ export class UserPostComponent {
   clientResult: string = '';
 
   chamadaBackPost(){
-    this.database.postUsuario(this.textItem).subscribe((resp : any)=>
+    this.database.postUsuario(parseInt(this.textItem)).subscribe((resp : any)=>
     {  
       alert("Postagem feita - "+resp);
       this.clientResult = resp;

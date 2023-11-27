@@ -13,6 +13,10 @@ export class HomeComponent {
   list: any;
 
   ngOnInit() {
+    
+  }
+
+  teste() {
     this.list = this.db.getPosts();
     console.log(this.list);
   }

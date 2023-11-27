@@ -12,14 +12,22 @@ export class DatabaseService {
 
   url: string = 'http://localhost:8080/workpro';
 
-  public postUsuario(text: string): Observable<any> {
+  public postUsuario(id: number): Observable<any> {
     const date = new Date();
-    const params = new HttpParams().set('text', text).set('date', String(date));  
+    const params = new HttpParams().set('id', id);  
     const options = {Headers: new HttpHeaders(), responseType: 'text' as 'json'}
     return this.http.post<any>(this.url, params, options);
   }
 
+  // public postUsuario(code: any): Observable<any> {
+  //   const params = new HttpParams()
+  //   .set('code', code);  
+  //   const options = {Headers: new HttpHeaders(), responseType: 'text' as 'json'}
+  //   return this.http.post<any>(url, params, options);
+  // }
+
   public getPosts(): Observable<any> {
-    return this.http.get(this.url);
+    const options = {Headers: new HttpHeaders(), responseType: 'text' as 'json'}
+    return this.http.post<any>(this.url, options);
   }
 }
