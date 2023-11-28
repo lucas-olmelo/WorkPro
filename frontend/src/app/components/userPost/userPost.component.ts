@@ -1,5 +1,7 @@
 import { Component } from '@angular/core';
-import { DatabaseService } from 'src/app/services/database.service';
+import { PostService } from 'src/app/services/post.service';
+import { UserService } from 'src/app/services/user.service';
+import { Post } from '../model/post';
 
 @Component({
   selector: 'app-post',
@@ -8,22 +10,27 @@ import { DatabaseService } from 'src/app/services/database.service';
 })
 export class UserPostComponent {
 
-  constructor(private database: DatabaseService) {}
+  constructor(private db: PostService) {}
 
-  textItem: string = '';
-  clientResult: string = '';
+  post: Post = new Post();
+  submitted = false;
 
-  chamadaBackPost(){
-    this.database.postUsuario(parseInt(this.textItem)).subscribe((resp : any)=>
-    {  
-      alert("Postagem feita - "+resp);
-      this.clientResult = resp;
-      console.log(resp);
+  newPost(): void {
+    this.submitted = false;
+    this.post = new Post();
+  }
+
+  save() {
+    this.db.createPost(this.post).subscribe(data => {
+      console.log(data)
+      this.post = new Post();
     },
-    (error : any)=>{
-      alert("error: "+error);
-    }   
-    )   
+    error => console.log(error));
+  }
+
+  onSubmit() {
+    this.submitted = true;
+    this.save();    
   }
 
 }

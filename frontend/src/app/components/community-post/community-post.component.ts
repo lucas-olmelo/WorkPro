@@ -1,4 +1,5 @@
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
+import { Post } from '../model/post';
 
 @Component({
   selector: 'app-community-post',
@@ -7,4 +8,5 @@ import { Component } from '@angular/core';
 })
 export class CommunityPostComponent {
 
+  @Input() post: any;
 }

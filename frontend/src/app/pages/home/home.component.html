@@ -1,5 +1,6 @@
 <div class="homeContainer">
     <app-post></app-post>
-    <button (click)="teste()">Teste</button>
-    <app-community-post></app-community-post>
+    <div *ngFor="let post of posts | async">
+        <app-community-post [post]="post"></app-community-post>
+    </div>
 </div>

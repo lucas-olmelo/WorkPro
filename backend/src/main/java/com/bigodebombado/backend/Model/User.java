@@ -31,7 +31,7 @@ public class User {
         this.id = id;
     }
 
-    @Column(name = "firstName", nullable = false)
+    @Column(name = "firstName")
     public String getFirstName() {
         return firstName;
     }

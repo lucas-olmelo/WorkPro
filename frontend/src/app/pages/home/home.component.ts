@@ -1,5 +1,7 @@
 import { Component } from '@angular/core';
-import { DatabaseService } from 'src/app/services/database.service';
+import { Observable } from 'rxjs';
+import { Post } from 'src/app/components/model/post';
+import { PostService } from 'src/app/services/post.service';
 
 @Component({
   selector: 'app-home',
@@ -8,16 +10,15 @@ import { DatabaseService } from 'src/app/services/database.service';
 })
 export class HomeComponent {
 
-  constructor(private db: DatabaseService) {}
+  constructor(private db: PostService) {}
 
-  list: any;
+  posts!: Observable<Post[]>;
 
   ngOnInit() {
-    
+    this.reloadData();
   }
 
-  teste() {
-    this.list = this.db.getPosts();
-    console.log(this.list);
+  reloadData() {
+    this.posts = this.db.getPostsList();
   }
 }

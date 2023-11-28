@@ -14,7 +14,7 @@ import javax.validation.Valid;
 
 @RestController
 @CrossOrigin(origins = "http://localhost:4200")
-@RequestMapping("/api/v1")
+@RequestMapping("/workpro")
 public class UserController {
 
     @Autowired
