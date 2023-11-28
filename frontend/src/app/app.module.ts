@@ -11,6 +11,10 @@ import { UserPostComponent } from './components/userPost/userPost.component';
 import { CommunityPostComponent } from './components/community-post/community-post.component';
 import { ProfileComponent } from './pages/profile/profile.component';
 
+import { registerLocaleData } from '@angular/common';
+import localePT from '@angular/common/locales/pt';
+registerLocaleData(localePT);
+
 @NgModule({
   declarations: [
     AppComponent,
