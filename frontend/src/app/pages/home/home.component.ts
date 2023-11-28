@@ -16,6 +16,7 @@ export class HomeComponent {
 
   ngOnInit() {
     this.reloadData();
+    console.log(this.posts);
   }
 
   reloadData() {

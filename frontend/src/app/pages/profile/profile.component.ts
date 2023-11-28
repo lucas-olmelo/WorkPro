@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { Observable } from 'rxjs';
 import { User } from 'src/app/components/model/user';
 import { UserService } from 'src/app/services/user.service'
 
@@ -8,8 +9,24 @@ import { UserService } from 'src/app/services/user.service'
   styleUrls: ['./profile.component.css']
 })
 export class ProfileComponent {
-
+  
   constructor(private db: UserService){ }
+  
+  ngOnInit() {
+    this.reloadData();
+  }
+
+  reloadData() {
+    this.users = this.db.getUsersList();
+  }
+
+  email: string = '';
+  password: string = '';
+  users!: Observable<User[]>;
+
+  onSubmitLogin() {
+    console.log(this.users);
+  }
 
   user: User = new User();
   submitted = false;

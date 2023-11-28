@@ -1,14 +1,14 @@
 <div class="profileContainer">
     <div class="loginContainer" *ngIf="cadastroFlag === false">
-        <div class="loginForm">
+        <form (ngSubmit)="onSubmitLogin()" class="loginForm">
             <h1 class="title">Acesse sua conta da WorkPro!</h1>
             <div class="loginInputs">
-                <input class="defaultInput" type="email" placeholder="Email">
-                <input class="defaultInput" type="password" placeholder="Senha">
+                <input class="defaultInput" type="email" placeholder="Email" id="emailLogin" required [(ngModel)]="email" name="emailLogin">
+                <input class="defaultInput" type="password" placeholder="Senha" id="passwordLogin" required [(ngModel)]="password" name="passwordLogin">
             </div>
-            <button class="createButton">Acessar conta</button>
+            <button type="submit" class="createButton">Acessar conta</button>
             <p class="createAccount">Não possui conta? <a (click)="inverteFlag()">Cadastre-se aqui!</a></p>
-        </div>
+        </form>
     </div>
     <div class="cadastroContainer" *ngIf="cadastroFlag === true">
         <div class="cadastroForm">
