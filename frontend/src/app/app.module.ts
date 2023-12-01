@@ -13,6 +13,8 @@ import { ProfileComponent } from './pages/profile/profile.component';
 
 import { registerLocaleData } from '@angular/common';
 import localePT from '@angular/common/locales/pt';
+import { JobsComponent } from './pages/jobs/jobs.component';
+import { VacancyComponent } from './components/vacancy/vacancy.component';
 registerLocaleData(localePT);
 
 @NgModule({
@@ -22,7 +24,9 @@ registerLocaleData(localePT);
     HomeComponent,
     UserPostComponent,
     CommunityPostComponent,
-    ProfileComponent
+    ProfileComponent,
+    JobsComponent,
+    VacancyComponent
   ],
   imports: [
     BrowserModule,

@@ -5,26 +5,26 @@ import { Observable } from 'rxjs';
 @Injectable({
   providedIn: 'root'
 })
-export class PostService {
+export class JobService {
 
   constructor(private http: HttpClient) { }
 
-  private baseUrl = 'http://localhost:8080/workproposts/posts';
+  private baseUrl = 'http://localhost:8080/workprojobs/jobs';
 
-  getPost(id: number): Observable<any> {
+  getJob(id: number): Observable<any> {
     return this.http.get(`${this.baseUrl}/${id}`);
   }
 
-  createPost(post: Object): Observable<Object> {
-    console.log(post);
-    return this.http.post(`${this.baseUrl}`, post);
+  createJob(job: Object): Observable<Object> {
+    console.log(job);
+    return this.http.post(`${this.baseUrl}`, job);
   }
 
-  deletePost(id: number): Observable<any> {
+  deleteJob(id: number): Observable<any> {
     return this.http.delete(`${this.baseUrl}/${id}`, { responseType: 'text' });
   }
 
-  getPostsList(): Observable<any> {
+  getJobsList(): Observable<any> {
     return this.http.get(`${this.baseUrl}`)
   }
 }

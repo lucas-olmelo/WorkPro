@@ -1,0 +1,73 @@
+.jobsContainer {
+    padding: 2%;
+}
+
+.createLink {
+    color: white;
+    background-color: #00FAA8;
+    border: 2px solid black;
+    border-radius: 25px;
+    font-weight: bold;
+    cursor: pointer;
+    width: 30%;
+    height: 50px;
+    font-size: 25px;
+}
+
+form {
+    border: 2px solid black;
+    border-radius: 25px;
+    padding: 2%;
+    display: flex;
+    flex-direction: row;
+}
+
+.formContainer {
+    width: max-content;
+    position: relative;
+}
+
+.createTitle {
+    margin: 2% 0;
+}
+
+.inputWrap {
+    margin: 3% 0
+}
+
+.defaultInput {
+    border: 2px solid black;
+    height: 40px;
+    border-radius: 15px;
+    padding-left: 2%;
+    margin: .5% 0;
+    width: 600px;
+}
+
+.descriptionInput {
+    height: 160px;
+}
+
+.buttonContainer {
+    display: flex;
+    justify-content: center;
+}
+
+.createButton {
+    background-color: #00FAA8;
+    height: 40px;
+    width: 100px;
+    border: 2px solid black;
+    border-radius: 15px;
+    font-weight: bold;
+    margin: 1% 0;
+    cursor: pointer;
+}
+
+i {
+    font-size: 30px; 
+    color: #00FAA8;
+    margin-right: 2%;
+    cursor: pointer;
+    height: max-content;
+}

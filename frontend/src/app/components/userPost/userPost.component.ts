@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 import { PostService } from 'src/app/services/post.service';
-import { UserService } from 'src/app/services/user.service';
 import { Post } from '../model/post';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-post',
@@ -10,7 +10,7 @@ import { Post } from '../model/post';
 })
 export class UserPostComponent {
 
-  constructor(private db: PostService) {}
+  constructor(private db: PostService, private router: Router) {}
 
   post: Post = new Post();
   submitted = false;
@@ -30,7 +30,11 @@ export class UserPostComponent {
 
   onSubmit() {
     this.submitted = true;
-    this.save();    
+    this.save();   
+    this.reloadPage();
   }
 
+  reloadPage(){
+    window.location.reload()
+  }
 }

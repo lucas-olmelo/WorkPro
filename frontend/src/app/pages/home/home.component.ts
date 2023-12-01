@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { Observable } from 'rxjs';
+import { Observable, tap } from 'rxjs';
 import { Post } from 'src/app/components/model/post';
 import { PostService } from 'src/app/services/post.service';
 
@@ -21,5 +21,14 @@ export class HomeComponent {
 
   reloadData() {
     this.posts = this.db.getPostsList();
+    this.posts = this.posts.pipe(
+      tap(results => {
+        results.sort((a: Post, b: Post) => {
+          let da: any = new Date(a.timestamp),
+              db: any = new Date(b.timestamp);
+          return db - da;
+        })
+      })
+    )
   }
 }

@@ -32,6 +32,22 @@ public class UserController {
         return ResponseEntity.ok().body(user);
     }
 
+    @GetMapping("/users/{email}")
+    public ResponseEntity<User> getUserByEmail (@PathVariable(value = "email") String email, String password) throws ResourceNotFoundException {
+        User user = userRepository.findByEmail(email);
+        if (user != null) {
+            String userPassword = user.getPassword();
+
+            if (userPassword.equals(password)){
+                return ResponseEntity.ok().body(user);
+            } else {
+                throw new ResourceNotFoundException("Wrong password");
+            }
+        } else {
+            throw new ResourceNotFoundException("User not found for this email :: " + email);
+        }
+    }
+
     @PostMapping("/users")
     public User createUser(@Valid @RequestBody User user){
         return userRepository.save(user);

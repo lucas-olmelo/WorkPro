@@ -1,0 +1,27 @@
+.vacancyContainer {
+    border: 2px solid black;
+    border-radius: 25px;
+    padding: 2%;
+    width: 65%;
+    margin: 2% 0;
+}
+
+.title {
+    font-size: 35px;
+    margin-bottom: 1%;
+    color: #00FAA8;
+}
+
+.entName {
+    font-size: 22px;
+}
+
+.wage {
+    font-size: 18px;
+}
+
+.description {
+    margin: 2% 0;
+    width: 100%;
+    text-align: justify;
+}

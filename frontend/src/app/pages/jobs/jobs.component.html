@@ -1,0 +1,34 @@
+<div class="jobsContainer">
+    <div class="buttonContainer"><button class="createLink" *ngIf="createJob === false" (click)="createJob = true">Criar um anúncio de vaga</button></div>
+    <div class="createJob" *ngIf="createJob === true">
+        <form (submit)="onSubmit()">
+            <i class="bi bi-arrow-90deg-left" (click)="createJob = false"></i>
+            <div class="formContainer">
+                <h2 class="createTitle">Criar anúncio de vaga:</h2>
+                <div class="inputWrap">
+                    <h4>Título da vaga:</h4>
+                    <input class="defaultInput" type="text" placeholder="Título da vaga" id="title" required [(ngModel)]="job.title" name="title">
+                </div>
+                <div class="inputWrap">
+                    <h4>Nome da empresa:</h4>
+                    <input class="defaultInput" type="text" placeholder="Nome da empresa" id="entName" required [(ngModel)]="job.enterpriseName" name="entName">
+                </div>
+                <div class="inputWrap">
+                    <h4>Salário:</h4>
+                    <input class="defaultInput" type="text" placeholder="Salário" id="wage" required [(ngModel)]="job.wage" name="wage">
+                </div>
+                <div class="inputWrap">
+                    <h4>Descrição:</h4>
+                    <input class="defaultInput descriptionInput" type="text" placeholder="Descrição" id="decription" required [(ngModel)]="job.description" name="decription">
+                </div>
+                <div class="buttonContainer"><button type="submit" class="createButton">Postar vaga</button></div>
+            </div>
+        </form>
+    </div>
+
+    <div class="vacanciesContainer" *ngIf="createJob === false">
+        <div *ngFor="let job of jobs | async">
+            <app-vacancy [job]="job"></app-vacancy>
+        </div>
+    </div>
+</div>
