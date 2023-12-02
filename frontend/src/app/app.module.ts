@@ -15,6 +15,17 @@ import { registerLocaleData } from '@angular/common';
 import localePT from '@angular/common/locales/pt';
 import { JobsComponent } from './pages/jobs/jobs.component';
 import { VacancyComponent } from './components/vacancy/vacancy.component';
+import { CurriculoComponent } from './pages/curriculo/curriculo.component';
+
+import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
+import {MatToolbarModule} from '@angular/material/toolbar';
+import {MatSidenavModule} from '@angular/material/sidenav';
+import {MatButtonModule} from '@angular/material/button';
+import {MatIconModule} from '@angular/material/icon';
+import {MatDividerModule} from '@angular/material/divider';
+
+
+
 registerLocaleData(localePT);
 
 @NgModule({
@@ -26,13 +37,20 @@ registerLocaleData(localePT);
     CommunityPostComponent,
     ProfileComponent,
     JobsComponent,
-    VacancyComponent
+    VacancyComponent,
+    CurriculoComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
-    FormsModule
+    FormsModule,
+    BrowserAnimationsModule,
+    MatToolbarModule,
+    MatSidenavModule,
+    MatButtonModule,
+    MatIconModule,
+    MatDividerModule,
   ],
   providers: [],
   bootstrap: [AppComponent]

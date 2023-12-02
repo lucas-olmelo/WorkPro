@@ -1,0 +1,52 @@
+mat-toolbar {
+  position: absolute;
+}
+
+mat-sidenav-content{
+  width: 100%;
+}
+
+.main-container {
+  display: flex;
+}
+
+.menu {
+  margin: 16px;
+  width: 200px;
+  border-right: none;
+  background: #00FAA8;
+  color: white;
+  border-radius: 10px;
+  padding: 16px;
+  text-align: center;
+  height: auto;
+}
+
+.content {
+  border-radius: 10px;
+  margin: 16px;
+  margin-left: 32px;
+  padding: 16px;
+  overflow: auto;
+  height: 615px;
+}
+
+.avatar {
+  margin-top: 16px;
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+}
+
+.name {
+  font-weight: normal;
+}
+
+.designation {
+  font-size: 0.7rem;
+  color: #fff;
+}
+
+mat-divider {
+  background-color: rgba(255, 255, 255, 255);
+}
