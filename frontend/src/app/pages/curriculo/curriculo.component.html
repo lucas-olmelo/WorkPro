@@ -1,0 +1,50 @@
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
+
+<mat-sidenav-container class="main-container">
+  <mat-sidenav-content class="menu mat-elevation-z8">
+    <div *ngFor="let dado of dados" class="info">
+      <div class="left">
+        <button (click)="trocaCurriculo(dado.id)" >
+        <img
+          class="avatar mat-elevation-z8"
+          src="{{dado.foto}}" />
+        </button>
+
+        <h4 class="name">
+          {{dado.nome}}<br />
+          <p class="designation">{{dado.cargo}}</p>
+        </h4>
+      </div>
+      <div class="right">
+        <p class="designation">
+          <br><br>
+          <i class="bi bi-envelope-plus"></i>
+          {{dado.email}}<i class="bi bi-at"></i>gmail.com
+        </p>
+        <p class="designation">
+          <i class="bi bi-telephone-plus"></i>
+          {{dado.phone}}
+        </p>
+        <a class="designation" href="{{dado.lindekin}}">
+          <i class="bi bi-linkedin"></i>
+          Linkedin
+        </a><br>
+        <a class="designation" href="{{dado.github}}">
+          <i class="bi bi-github"></i>
+          Github
+        </a>
+      </div><br>
+    </div>
+
+  </mat-sidenav-content>
+
+  <mat-sidenav-content class="content mat-elevation-z8" *ngIf="resume===0">
+    <app-pedro></app-pedro>
+  </mat-sidenav-content>
+  <mat-sidenav-content class="content mat-elevation-z8" *ngIf="resume===1">
+    <app-melo></app-melo>
+  </mat-sidenav-content>
+  <mat-sidenav-content class="content mat-elevation-z8" *ngIf="resume===2">
+    <app-lins></app-lins>
+  </mat-sidenav-content>
+</mat-sidenav-container>

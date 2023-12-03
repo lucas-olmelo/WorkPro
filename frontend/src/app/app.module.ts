@@ -17,6 +17,18 @@ import { CommunityPostComponent } from './components/community-post/community-po
 import { ProfileComponent } from './pages/profile/profile.component';
 import { JobsComponent } from './pages/jobs/jobs.component';
 import { VacancyComponent } from './components/vacancy/vacancy.component';
+import { CurriculoComponent } from './pages/curriculo/curriculo.component';
+
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { MatToolbarModule } from '@angular/material/toolbar';
+import { MatSidenavModule } from '@angular/material/sidenav';
+import { MatButtonModule } from '@angular/material/button';
+import { MatIconModule } from '@angular/material/icon';
+import { MatDividerModule } from '@angular/material/divider';
+import { PedroComponent } from './components/curriculos/pedro/pedro.component';
+import { LinsComponent } from './components/curriculos/lins/lins.component';
+import { MeloComponent } from './components/curriculos/melo/melo.component';
+
 import { NetworkComponent } from './pages/network/network.component';
 import { LoginComponent } from './pages/login/login.component';
 
@@ -34,6 +46,10 @@ export function tokenGetter() {
     ProfileComponent,
     JobsComponent,
     VacancyComponent,
+    CurriculoComponent,
+    PedroComponent,
+    LinsComponent,
+    MeloComponent,,
     NetworkComponent,
     LoginComponent
   ],
@@ -49,6 +65,13 @@ export function tokenGetter() {
         disallowedRoutes: ['http://localhost:8080/auth/login'], // Altere para as rotas que não exigem token
       },
     }),
+    FormsModule,
+    BrowserAnimationsModule,
+    MatToolbarModule,
+    MatSidenavModule,
+    MatButtonModule,
+    MatIconModule,
+    MatDividerModule,
   ],
   providers: [],
   bootstrap: [AppComponent]

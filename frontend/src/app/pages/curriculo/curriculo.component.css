@@ -1,0 +1,73 @@
+mat-toolbar {
+  position: absolute;
+}
+
+mat-sidenav-content{
+  width: 100%;
+}
+
+.main-container {
+  display: flex;
+}
+
+.menu {
+  margin: 16px;
+  width: 450px;
+  border-right: none;
+  background: #00FAA8;
+  color: white;
+  border-radius: 10px;
+  padding: 16px;
+  text-align: center;
+  height: auto;
+}
+
+.content {
+
+  border-radius: 10px;
+  margin: 16px;
+  padding: 16px;
+  height: auto;
+  overflow: auto;
+  width: 630px;
+  align-items: center;
+  justify-content: center;
+  margin-left: 15%;
+}
+
+.avatar {
+  margin-top: 16px;
+  height: 100px;
+  border-radius: 50%;
+  left:0%;
+}
+
+.name {
+  font-weight: normal;
+}
+
+.designation {
+  font-size: 1rem;
+  color: #fff;
+}
+
+
+.info{
+  display: flex;
+  border-bottom: solid #fff 1px;
+}
+
+
+.right{
+  margin-left: auto;
+}
+
+.left{
+  width: 180px;
+}
+
+button{
+  height: 100px;
+  background-color: #00FAA8;
+  border-radius: 50%;
+}

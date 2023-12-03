@@ -3,6 +3,7 @@ import { RouterModule, Routes } from '@angular/router';
 import { HomeComponent } from './pages/home/home.component';
 import { ProfileComponent } from './pages/profile/profile.component';
 import { JobsComponent } from './pages/jobs/jobs.component';
+import { CurriculoComponent } from './pages/curriculo/curriculo.component';
 import { NetworkComponent } from './pages/network/network.component';
 import { AuthGuard } from './auth.guard';
 import { LoginComponent } from './pages/login/login.component';
@@ -28,7 +29,11 @@ const routes: Routes = [
   {
     path: 'login',
     component: LoginComponent
-  }
+  },
+  {
+    path: 'resume',
+    component: CurriculoComponent
+  },
 ];
 
 @NgModule({
@@ -36,5 +41,5 @@ const routes: Routes = [
   exports: [RouterModule]
 })
 export class AppRoutingModule {
-  
+
 }
