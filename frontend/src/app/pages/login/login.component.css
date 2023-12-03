@@ -1,0 +1,130 @@
+.loginCadastroContainer {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 2%;
+
+    background: rgb(0,250,168);
+    background: linear-gradient(32deg, rgba(0,250,168,1) 0%, rgba(0,252,168,1) 25%, rgba(28,218,255,1) 100%);
+}
+
+.loginContainer {
+    background-color: white;
+    border: 2px solid black;
+    border-radius: 25px;
+    width: 35%;
+    height: 560px;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+
+.loginForm {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 2%;
+}
+
+.loginInputs {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin: 10% 0;
+}
+
+.cadastroContainer {
+    background-color: white;
+    border: 2px solid black;
+    border-radius: 25px;
+    width: 70%;
+    display: flex;
+    flex-direction: row;
+}
+
+.cadastroForm {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 50%;
+    padding: 2%;
+}
+
+form {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.title {
+    color: #00FAA8;
+    width: 400px;
+    text-align: center;
+    margin: 5% 0;
+}
+
+.nomeSobrenome {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    width: 400px;
+}
+
+input {
+    border: 2px solid black;
+    height: 40px;
+    border-radius: 15px;
+    padding-left: 2%;
+    margin: .5% 0;
+}
+
+.smallInput {
+    width: 48%;
+}
+
+.defaultInput {
+    width: 400px;
+}
+
+.createButton {
+    background-color: #00FAA8;
+    height: 40px;
+    width: 100px;
+    border: 2px solid black;
+    border-radius: 15px;
+    font-weight: bold;
+    margin: 2% 0;
+    cursor: pointer;
+}
+
+.createAccount {
+    font-size: 15px;
+    margin-top: 2%;
+}
+
+.createAccount a {
+    text-decoration: underline;
+    color: #00FAA8;
+    cursor: pointer;
+}
+
+.cadastroImage {
+    width: 50%;
+    border-top-right-radius: 25px;
+    border-bottom-right-radius: 25px;
+}
+
+i {
+    font-size: 30px; 
+    color: #00FAA8;
+    position: absolute;
+    top: 10%;
+    left: 10%;
+    cursor: pointer;
+}

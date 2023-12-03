@@ -1,29 +1,3 @@
 <div class="profileContainer">
-    <div class="loginContainer" *ngIf="cadastroFlag === false">
-        <form (ngSubmit)="onSubmitLogin()" class="loginForm">
-            <h1 class="title">Acesse sua conta da WorkPro!</h1>
-            <div class="loginInputs">
-                <input class="defaultInput" type="email" placeholder="Email" id="emailLogin" required [(ngModel)]="email" name="emailLogin">
-                <input class="defaultInput" type="password" placeholder="Senha" id="passwordLogin" required [(ngModel)]="password" name="passwordLogin">
-            </div>
-            <button type="submit" class="createButton">Acessar conta</button>
-            <p class="createAccount">Não possui conta? <a (click)="inverteFlag()">Cadastre-se aqui!</a></p>
-        </form>
-    </div>
-    <div class="cadastroContainer" *ngIf="cadastroFlag === true">
-        <div class="cadastroForm">
-            <i class="bi bi-arrow-90deg-left" (click)="inverteFlag()"></i>
-            <form (ngSubmit)="onSubmit()">
-                <h1 class="title">Crie hoje sua conta na WorkPro!</h1>
-                <div class="nomeSobrenome">
-                    <input class="smallInput" type="text" placeholder="Nome" id="firstName" [(ngModel)]="user.firstName" name="lastName">
-                    <input class="smallInput" type="text" placeholder="Sobrenome" id="lastName" required [(ngModel)]="user.lastName" name="lastName">
-                </div>
-                <input class="defaultInput" type="email" placeholder="Email" id="email" required [(ngModel)]="user.email" name="email">
-                <input class="defaultInput" type="password" placeholder="Senha" id="password" required [(ngModel)]="user.password" name="password">
-                <button type="submit" class="createButton">Criar conta</button>
-            </form>
-        </div>
-        <img class="cadastroImage" src="../../../assets/business_man_red.jpg" alt="">
-    </div>
+    <h1>Olá {{loggedUser?.firstName}} {{loggedUser?.lastName}}</h1>
 </div>

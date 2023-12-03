@@ -1,7 +1,5 @@
 import { Component } from '@angular/core';
-import { Observable } from 'rxjs';
-import { User } from 'src/app/components/model/user';
-import { UserService } from 'src/app/services/user.service'
+import { AuthenticationService } from 'src/app/services/authentication.service';
 
 @Component({
   selector: 'app-profile',
@@ -10,54 +8,7 @@ import { UserService } from 'src/app/services/user.service'
 })
 export class ProfileComponent {
   
-  constructor(private db: UserService){ }
-  
-  ngOnInit() {
-    this.reloadData();
-  }
+  constructor(private db: AuthenticationService){}
 
-  reloadData() {
-    this.users = this.db.getUsersList();
-  }
-
-  email: string = '';
-  password: string = '';
-  users!: Observable<User[]>;
-
-  onSubmitLogin() {
-    console.log(this.users);
-  }
-
-  user: User = new User();
-  submitted = false;
-
-  newUser(): void {
-    this.submitted = false;
-    this.user = new User();
-  }
-
-  save() {
-    this.db.createUser(this.user).subscribe(data => {
-      console.log(data)
-      this.user = new User();
-    },
-    error => console.log(error));
-  }
-
-  onSubmit() {
-    this.submitted = true;
-    this.save();
-    this.showConfirmation();
-    this.inverteFlag();
-  }
-
-  cadastroFlag: boolean = false;
-
-  inverteFlag() {
-    this.cadastroFlag = !this.cadastroFlag;
-  }
-
-  showConfirmation() {
-    alert("O usuário foi criado com sucesso!")
-  }
+  loggedUser: { firstName: string; lastName: string; email: string } | null = this.db.getUserInfo();
 }
