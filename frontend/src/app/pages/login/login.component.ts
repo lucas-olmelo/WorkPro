@@ -23,23 +23,13 @@ export class LoginComponent {
   user: User = new User();
   submitted = false;
 
-  newUser(): void {
-    this.submitted = false;
-    this.user = new User();
-  }
-
   save() {
-    // this.db.createUser(this.user).subscribe(data => {
-    //   console.log(data)
-    //   this.user = new User();
-    // },
-    // error => console.log(error));
+    this.db.register(this.user);
   }
 
   onSubmit() {
     this.submitted = true;
     this.save();
-    this.showConfirmation();
     this.inverteFlag();
   }
 
@@ -47,9 +37,5 @@ export class LoginComponent {
 
   inverteFlag() {
     this.cadastroFlag = !this.cadastroFlag;
-  }
-
-  showConfirmation() {
-    alert("O usuário foi criado com sucesso!")
   }
 }

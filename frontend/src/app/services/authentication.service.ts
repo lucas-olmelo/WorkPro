@@ -36,6 +36,17 @@ export class AuthenticationService {
   }
 
   register(user: object){
+    const httpOptions = {
+      headers: new HttpHeaders({
+                   'Content-Type': 'application/json',
+                   'Access-Control-Allow-Origin': '*',
+                   'Access-Control-Allow-Credentials': 'true'
+      })
+    };
+  
+    return this.http.post(`${this.baseUrl}/register`, JSON.stringify(user), httpOptions).subscribe(data => {
+      console.log(data);
+    });
   }
 
   getUserInfo(): { firstName: string; lastName: string; email: string } | null {

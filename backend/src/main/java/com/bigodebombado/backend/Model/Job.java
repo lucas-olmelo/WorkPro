@@ -2,6 +2,8 @@ package com.bigodebombado.backend.Model;
 
 import jakarta.persistence.*;
 
+import java.util.Date;
+
 @Entity
 @Table(name = "job")
 public class Job {
@@ -11,15 +13,19 @@ public class Job {
     private String enterpriseName;
     private String description;
     private String wage;
+    private String user;
+    private Date timestamp;
 
     public Job() {
     }
 
-    public Job(String title, String enterpriseName, String description, String wage) {
+    public Job(String title, String enterpriseName, String description, String wage, String user, Date timestamp) {
         this.title = title;
         this.enterpriseName = enterpriseName;
         this.description = description;
         this.wage = wage;
+        this.user = user;
+        this.timestamp = timestamp;
     }
 
     @Id
@@ -66,6 +72,24 @@ public class Job {
 
     public void setWage(String wage) {
         this.wage = wage;
+    }
+
+    @Column(name = "timestamp")
+    public Date getTimestamp() {
+        return timestamp;
+    }
+
+    public void setTimestamp(Date timestamp) {
+        this.timestamp = timestamp;
+    }
+
+    @Column(name = "user")
+    public String getUser() {
+        return user;
+    }
+
+    public void setUser(String user) {
+        this.user = user;
     }
 
     @Override

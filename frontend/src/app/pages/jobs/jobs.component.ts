@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
-import { Observable } from 'rxjs';
+import { Observable, tap } from 'rxjs';
 import { Job } from 'src/app/components/model/job';
+import { AuthenticationService } from 'src/app/services/authentication.service';
 import { JobService } from 'src/app/services/job.service';
 
 @Component({
@@ -10,20 +11,16 @@ import { JobService } from 'src/app/services/job.service';
 })
 export class JobsComponent {
 
-  constructor(private db: JobService) {}
+  constructor(private db: JobService, private auth: AuthenticationService) {}
 
-  job: Job = new Job();
+  user = this.auth.getUserInfo()?.firstName + " " + this.auth.getUserInfo()?.lastName
+  job: Job = new Job(this.user);
   submitted = false;
-
-  newPost(): void {
-    this.submitted = false;
-    this.job = new Job();
-  }
 
   save() {
     this.db.createJob(this.job).subscribe(data => {
       console.log(data)
-      this.job = new Job();
+      this.job = new Job(this.user);
     },
     error => console.log(error));
   }
@@ -43,6 +40,15 @@ export class JobsComponent {
 
   reloadData() {
     this.jobs = this.db.getJobsList();
+    this.jobs = this.jobs.pipe(
+      tap(results => {
+        results.sort((a: Job, b: Job) => {
+          let da: any = new Date(a.timestamp),
+              db: any = new Date(b.timestamp);
+          return db - da;
+        })
+      })
+    )
   }
 
   createJob: boolean = false;

@@ -1,0 +1,16 @@
+.profileContainer {
+    padding: 2%;
+}
+
+.logoutButton {
+    background-color: #00FAA8;
+    border: solid 2px black;
+    border-radius: 25px;
+    width: 120px;
+    height: 40px;
+    font-size: 25px;
+    font-weight: bold;
+    cursor: pointer;
+    position: absolute;
+    bottom: 5%;
+}

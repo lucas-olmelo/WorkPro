@@ -2,6 +2,8 @@
     <h2 class="title">{{job.title}}</h2>
     <h3 class="entName">{{job.enterpriseName}}</h3>
     <h4 class="wage">{{job.wage}}</h4>
+    <p>Postado por: {{job.user}} em {{job.timestamp | date: 'short' : '' : 'pt-BR'}}</p>
+
     
     <p class="description">{{job.description}}</p>
 </div>

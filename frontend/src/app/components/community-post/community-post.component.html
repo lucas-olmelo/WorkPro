@@ -1,7 +1,7 @@
 <div class="postContainer">
     <div class="userInfo">
         <img class="profilePic" src="../../../assets/default_profile_image.png" alt="">
-        <p class="username">Username Username</p>
+        <p class="username">{{post.user}}</p>
     </div>
     <p class="post">{{post.postText}}</p>
     <p class="datetime">{{post.timestamp | date: 'medium' : '' : 'pt-BR'}}</p>

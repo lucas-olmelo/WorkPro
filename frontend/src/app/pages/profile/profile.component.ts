@@ -11,4 +11,9 @@ export class ProfileComponent {
   constructor(private db: AuthenticationService){}
 
   loggedUser: { firstName: string; lastName: string; email: string } | null = this.db.getUserInfo();
+
+  logout(): void {
+    this.db.logout();
+    window.location.reload();
+  }
 }

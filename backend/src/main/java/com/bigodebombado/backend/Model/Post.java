@@ -11,6 +11,7 @@ public class Post {
     private long id;
     private String postText;
     private Date timestamp;
+    private String user;
 
     public Post() {
     }
@@ -18,6 +19,12 @@ public class Post {
     public Post(String postText, Date timestamp) {
         this.postText = postText;
         this.timestamp = timestamp;
+    }
+
+    public Post(String postText, Date timestamp, String user) {
+        this.postText = postText;
+        this.timestamp = timestamp;
+        this.user = user;
     }
 
     @Id
@@ -46,6 +53,14 @@ public class Post {
 
     public void setTimestamp(Date timestamp) {
         this.timestamp = timestamp;
+    }
+
+    public String getUser() {
+        return user;
+    }
+
+    public void setUser(String user) {
+        this.user = user;
     }
 
     @Override

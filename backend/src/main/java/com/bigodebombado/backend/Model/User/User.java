@@ -29,12 +29,13 @@ public class User implements UserDetails {
     private String password;
     private UserRole role;
 
+
     public User(String firstName, String lastName, String email, String password) {
         this.firstName = firstName;
         this.lastName = lastName;
         this.email = email;
         this.password = password;
-        this.role = UserRole.ADMIN;
+        this.role = UserRole.USER;
     }
 
     public String getFirstName() {
