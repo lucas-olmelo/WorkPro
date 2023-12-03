@@ -24,6 +24,8 @@ import {MatButtonModule} from '@angular/material/button';
 import {MatIconModule} from '@angular/material/icon';
 import {MatDividerModule} from '@angular/material/divider';
 import { PedroComponent } from './components/curriculos/pedro/pedro.component';
+import { LinsComponent } from './components/curriculos/lins/lins.component';
+import { MeloComponent } from './components/curriculos/melo/melo.component';
 
 
 
@@ -41,6 +43,8 @@ registerLocaleData(localePT);
     VacancyComponent,
     CurriculoComponent,
     PedroComponent,
+    LinsComponent,
+    MeloComponent,
   ],
   imports: [
     BrowserModule,

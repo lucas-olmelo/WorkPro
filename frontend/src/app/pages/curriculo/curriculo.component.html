@@ -2,99 +2,49 @@
 
 <mat-sidenav-container class="main-container">
   <mat-sidenav-content class="menu mat-elevation-z8">
-    <div class="info">
+    <div *ngFor="let dado of dados" class="info">
       <div class="left">
+        <button (click)="trocaCurriculo(dado.id)" >
         <img
           class="avatar mat-elevation-z8"
-          src="../../../assets/eu.jpg" />
+          src="{{dado.foto}}" />
+        </button>
 
         <h4 class="name">
-          Pedro Costa<br />
-          <p class="designation">Dev FullStack</p>
+          {{dado.nome}}<br />
+          <p class="designation">{{dado.cargo}}</p>
         </h4>
       </div>
       <div class="right">
         <p class="designation">
           <br><br>
           <i class="bi bi-envelope-plus"></i>
-          pedropcs608gmail.com
+          {{dado.email}}<i class="bi bi-at"></i>gmail.com
         </p>
         <p class="designation">
           <i class="bi bi-telephone-plus"></i>
-          (11) 94749-2289
+          {{dado.phone}}
         </p>
-        <a class="designation" href="https://github.com/cuesta0900">
+        <a class="designation" href="{{dado.lindekin}}">
+          <i class="bi bi-linkedin"></i>
+          Linkedin
+        </a><br>
+        <a class="designation" href="{{dado.github}}">
           <i class="bi bi-github"></i>
           Github
         </a>
-      </div>
-    </div>
-
-    <mat-divider></mat-divider>
-
-    <div class="info">
-      <div class="left">
-        <img
-          class="avatar mat-elevation-z8"
-          src="https://avatars.githubusercontent.com/u/112345359?v=4"
-        />
-
-        <h4 class="name">
-          Lucas Melo<br />
-          <p class="designation">Dev FullStack</p>
-        </h4>
-      </div>
-      <div class="right">
-        <p class="designation">
-          <br><br>
-          <i class="bi bi-envelope-plus"></i>
-          pedropcs608gmail.com
-        </p>
-        <p class="designation">
-          <i class="bi bi-telephone-plus"></i>
-          (11) 95972-0351
-        </p>
-        <a class="designation" href="https://github.com/lucas-olmelo">
-          <i class="bi bi-github"></i>
-          Github
-        </a>
-      </div>
-    </div>
-
-    <mat-divider></mat-divider>
-
-    <div class="info">
-      <div class="left">
-        <img
-          class="avatar mat-elevation-z8"
-          src="https://media.licdn.com/dms/image/D4D03AQHqPBl3ITbZZg/profile-displayphoto-shrink_100_100/0/1697902676229?e=1707350400&v=beta&t=MBwMtzYI4XsFhe5QbHrF9SRq8e78W3pGYydxQ8dSG7I"
-        />
-
-        <h4 class="name">
-          Lucas Lins<br />
-          <p class="designation">Aprendiz</p>
-        </h4>
-      </div>
-      <div class="right">
-        <p class="designation">
-          <br><br>
-          <i class="bi bi-envelope-plus"></i>
-          pedropcs608gmail.com
-        </p>
-        <p class="designation">
-          <i class="bi bi-telephone-plus"></i>
-          (11) 98574-6754
-        </p>
-        <a class="designation" href="https://github.com/lucklins">
-          <i class="bi bi-github"></i>
-          Github
-        </a>
-      </div>
+      </div><br>
     </div>
 
   </mat-sidenav-content>
 
-  <mat-sidenav-content class="content mat-elevation-z8">
+  <mat-sidenav-content class="content mat-elevation-z8" *ngIf="resume===0">
     <app-pedro></app-pedro>
+  </mat-sidenav-content>
+  <mat-sidenav-content class="content mat-elevation-z8" *ngIf="resume===1">
+    <app-melo></app-melo>
+  </mat-sidenav-content>
+  <mat-sidenav-content class="content mat-elevation-z8" *ngIf="resume===2">
+    <app-lins></app-lins>
   </mat-sidenav-content>
 </mat-sidenav-container>

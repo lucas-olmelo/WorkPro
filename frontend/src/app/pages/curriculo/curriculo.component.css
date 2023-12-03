@@ -12,7 +12,7 @@ mat-sidenav-content{
 
 .menu {
   margin: 16px;
-  width: 400px;
+  width: 450px;
   border-right: none;
   background: #00FAA8;
   color: white;
@@ -23,13 +23,13 @@ mat-sidenav-content{
 }
 
 .content {
+
   border-radius: 10px;
   margin: 16px;
   padding: 16px;
   height: auto;
   overflow: auto;
-  background-color: #00FAA8;
-  width: 613px;
+  width: 630px;
   align-items: center;
   justify-content: center;
   margin-left: 15%;
@@ -37,9 +37,9 @@ mat-sidenav-content{
 
 .avatar {
   margin-top: 16px;
-  width: 100px;
   height: 100px;
   border-radius: 50%;
+  left:0%;
 }
 
 .name {
@@ -51,14 +51,23 @@ mat-sidenav-content{
   color: #fff;
 }
 
-mat-divider {
-  background-color: rgba(255, 255, 255, 255);
-}
 
 .info{
   display: flex;
+  border-bottom: solid #fff 1px;
+}
+
+
+.right{
+  margin-left: auto;
 }
 
 .left{
-  margin-right: 20px;
+  width: 180px;
+}
+
+button{
+  height: 100px;
+  background-color: #00FAA8;
+  border-radius: 50%;
 }
