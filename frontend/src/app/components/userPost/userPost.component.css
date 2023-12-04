@@ -12,6 +12,7 @@ form {
     width: 100%;
     display: flex;
     flex-direction: row;
+    align-items: center;
     gap: 20px;
 }
 
@@ -24,10 +25,15 @@ form {
 .textInput {
     border: solid 2px black;
     border-radius: 25px;
-    height: 50px;
     width: 100%;
-    padding-left: 2%;
+    padding: 1% 2%;
     font-size: 18px;
+
+    display: flex;
+    align-items: center;
+
+    resize: none; /* Evita que o usuário redimensione manualmente */
+    overflow-y: hidden; /* Oculta barras de rolagem adicionais */
 }
 
 .textInput:focus {
@@ -37,9 +43,10 @@ form {
 .postButton {
     background-color: #00FAA8;
     border: solid 2px black;
-    border-radius: 25px;
-    width: 150px;
-    height: 50px;
+    border-radius: 15px;
+    width: 100px;
+    height: 40px;
     font-weight: bold;
+    font-size: 20px;
     cursor: pointer;
 }

@@ -2,13 +2,14 @@ import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Router } from '@angular/router';
 import { JwtHelperService } from '@auth0/angular-jwt';
+import { NotificationService } from './notification.service';
 
 @Injectable({
   providedIn: 'root'
 })
 export class AuthenticationService {
 
-  constructor(private http: HttpClient, private router: Router) { }
+  constructor(private http: HttpClient, private notificationService: NotificationService, private router: Router) { }
 
   baseUrl: string = "http://localhost:8080/auth"
 
@@ -25,14 +26,16 @@ export class AuthenticationService {
     return this.http.post(`${this.baseUrl}/login`, JSON.stringify(user), httpOptions).subscribe(data => {
       localStorage.setItem('access_token', JSON.parse(JSON.stringify(data)).token)
       console.info(JSON.parse(JSON.stringify(data)).token);
+      this.notificationService.notifyAuthenticationChanged();
       this.router.navigate(['profile']);
-      // window.location.reload();
     });
   }
 
   logout(): void {
     // Remove o token do localStorage
     localStorage.removeItem('access_token');
+    this.notificationService.notifyAuthenticationChanged();
+    this.router.navigate(['login']);
   }
 
   register(user: object){
@@ -66,7 +69,7 @@ export class AuthenticationService {
     return null;
   }
 
-  isAuthenticated(): boolean {
+  checkAuthentication(): boolean {
     const token = localStorage.getItem('access_token');
     // Verifica se há um token e se não está expirado
     return !!token && !this.jwtHelper.isTokenExpired(token);

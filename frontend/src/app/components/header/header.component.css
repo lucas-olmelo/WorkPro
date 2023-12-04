@@ -12,11 +12,41 @@
 .pages {
     display: flex;
     flex-direction: row;
-    gap: 25px;
     align-items: center;
+    gap: 25px;
     padding-right: 5%;
 
     font-size: 25px;
     text-transform: uppercase;
     color: #00FAA8;
+}
+
+.links {
+    display: flex;
+    flex-direction: row;
+    gap: 25px;
+    padding-right: 2%;
+    align-items: flex-end;
+}
+
+a {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-end;
+}
+
+i {
+    margin-bottom: 5%;
+}
+
+.loginButton {
+    background-color: #00FAA8;
+    color: white;
+    height: 40px;
+    border-radius: 10px;
+    font-size: 25px;
+    padding-left: 2%;
+    padding-right: 2%;
+    cursor: pointer;
 }

@@ -24,6 +24,11 @@
 .username {
     font-size: 20px;
     font-weight: bold;
+    margin: 0;
+}
+
+.post {
+    font-size: 20px;
 }
 
 .datetime {

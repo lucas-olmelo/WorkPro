@@ -5,6 +5,8 @@
 .title {
     margin-bottom: 2%;
     color: #00FAA8;
+    font-weight: bold;
+    font-size: 35px;
 }
 
 .user {

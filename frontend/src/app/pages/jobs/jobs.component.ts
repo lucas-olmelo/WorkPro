@@ -27,7 +27,7 @@ export class JobsComponent {
   }
 
   createButton(){
-    if(this.auth.isAuthenticated() === false){
+    if(this.auth.checkAuthentication() === false){
       this.router.navigate(['login']);
     } else {
       this.createJob = true

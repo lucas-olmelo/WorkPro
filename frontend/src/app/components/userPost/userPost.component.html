@@ -1,7 +1,7 @@
 <div class="postContainer">
     <img class="profilePic" src="../../../assets/default_profile_image.png" alt="">
     <form (ngSubmit)="onSubmit()">
-        <input class="textInput" type="text" placeholder="Escreva algo..." [(ngModel)]="post.postText" id="postText" name="postText">
+        <textarea #myTextarea class="textInput" type="text" placeholder="Escreva algo..." [(ngModel)]="post.postText" id="postText" name="postText" (input)="ajustarAltura()" rows="1"></textarea>
         <button type="submit" class="postButton">Enviar</button>
     </form>
 </div>

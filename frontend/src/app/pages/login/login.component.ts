@@ -15,6 +15,11 @@ export class LoginComponent {
   loginUser: {email: string, password: string} = {email:'', password:''};
   loggedUser: { firstName: string; lastName: string; email: string } | null = { firstName: '', lastName: '', email: '' }
 
+  mostrarSenha = false;
+  toggleMostrarSenha() {
+    this.mostrarSenha = !this.mostrarSenha;
+  }
+
   login(){
     this.db.login(this.loginUser);
     this.loggedUser = this.db.getUserInfo();
