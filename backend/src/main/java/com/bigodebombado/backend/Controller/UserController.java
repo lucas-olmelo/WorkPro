@@ -5,6 +5,7 @@ import com.bigodebombado.backend.Model.User.User;
 import com.bigodebombado.backend.Repository.UserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
+import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.HashMap;
@@ -32,21 +33,6 @@ public class UserController {
         return ResponseEntity.ok().body(user);
     }
 
-//    @GetMapping("/users/{email}")
-//    public ResponseEntity<User> getUserByEmail (@PathVariable(value = "email") String email, String password) throws ResourceNotFoundException {
-//        User user = userRepository.findByEmail(email);
-//        if (user != null) {
-//            String userPassword = user.getPassword();
-//
-//            if (userPassword.equals(password)){
-//                return ResponseEntity.ok().body(user);
-//            } else {
-//                throw new ResourceNotFoundException("Wrong password");
-//            }
-//        } else {
-//            throw new ResourceNotFoundException("User not found for this email :: " + email);
-//        }
-//    }
 
     @PostMapping("/users")
     public User createUser(@Valid @RequestBody User user){

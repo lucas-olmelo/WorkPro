@@ -8,7 +8,6 @@
             <a routerLink="/network" routerLinkActive="false"><i class="bi bi-globe2"></i> Rede</a>
             <a *ngIf="isAuthenticated == true" routerLink="/profile" routerLinkActive="true"><i class="bi bi-person-fill"></i> Perfil</a>
         </div>
-        <button *ngIf="isAuthenticated == false" routerLink="/profile" routerLinkActive="true" class="loginButton">Login/Registro</button>
+        <button *ngIf="isAuthenticated == false" routerLink="/profile" routerLinkActive="true" class="loginButton">Login/Cadastro</button>
     </div>
 </div>
-<hr>

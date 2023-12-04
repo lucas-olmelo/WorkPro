@@ -133,3 +133,7 @@ i {
     color: #00FAA8;    
     cursor: pointer;
 }
+
+.error-message {
+    color: red;
+}

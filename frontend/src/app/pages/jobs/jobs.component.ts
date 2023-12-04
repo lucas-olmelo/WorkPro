@@ -19,11 +19,13 @@ export class JobsComponent {
   submitted = false;
 
   save() {
-    this.db.createJob(this.job).subscribe(data => {
-      console.log(data)
+    this.db.createJob(this.job).subscribe(response => {
+      console.log(response);
       this.job = new Job(this.user);
-    },
-    error => console.log(error));
+      this.createJob = false;
+    }, error => {
+      console.log(error);
+    });
   }
 
   createButton(){
@@ -37,14 +39,12 @@ export class JobsComponent {
   onSubmit() {
     this.submitted = true;
     this.save();   
-    this.createJob = false;
   }
 
   jobs!: Observable<Job[]>;
 
   ngOnInit() {
     this.reloadData();
-    console.log(this.jobs);
   }
 
   reloadData() {

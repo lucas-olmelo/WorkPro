@@ -1,9 +1,11 @@
 <div class="vacancyContainer">
     <h2 class="title">{{job.title}}</h2>
-    <h3 class="entName">{{job.enterpriseName}}</h3>
-    <h4 class="wage">{{job.wage}}</h4>
-    <p>Postado por: {{job.user}} em {{job.timestamp | date: 'short' : '' : 'pt-BR'}}</p>
-
+    <div class="vacancyInfo">
+        <h3 class="entName">{{job.enterpriseName}} | {{job.wage}}</h3>
+        <!-- <p class="pipe">-</p>
+        <h4 class="wage"></h4> -->
+    </div>
     
     <p class="description">{{job.description}}</p>
+    <p>Postado por: {{job.user}} em {{job.timestamp | date: 'short' : '' : 'pt-BR'}}</p>
 </div>

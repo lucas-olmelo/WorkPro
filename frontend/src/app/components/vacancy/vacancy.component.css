@@ -12,16 +12,31 @@
     color: #00FAA8;
 }
 
+.vacancyInfo {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 2%;
+}
+
 .entName {
     font-size: 22px;
+    margin: 0;
+}
+
+.pipe {
+    margin: 0;
+    font-size: 18px;
 }
 
 .wage {
     font-size: 18px;
+    margin: 0;
 }
 
 .description {
-    margin: 2% 0;
+    margin: 5% 0;
     width: 100%;
     text-align: justify;
+    font-size: 25px;
 }

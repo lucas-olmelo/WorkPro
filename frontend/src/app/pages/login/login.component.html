@@ -2,11 +2,12 @@
     <div class="loginContainer" *ngIf="cadastroFlag === false">
         <form (ngSubmit)="login()" class="loginForm">
             <h1 class="title">Acesse sua conta da WorkPro!</h1>
+            <div *ngIf="errorMessage" class="error-message">{{ errorMessage }}</div>
             <div class="loginInputs">
                 <input class="defaultInput" type="email" placeholder="Email" id="emailLogin" required [(ngModel)]="loginUser.email" name="emailLogin">
                 <div style="display: flex; align-items: center;">
                     <input class="defaultInput icon-input" type="{{ mostrarSenha ? 'text' : 'password' }}" placeholder="Senha" id="passwordLogin" required [(ngModel)]="loginUser.password" name="passwordLogin">
-                    <span class="input-group-text" style="margin-left: 1%;">
+                    <span style="margin-left: 2%;">
                         <i class="bi bi-{{ mostrarSenha ? 'eye' : 'eye-slash' }}" (click)="toggleMostrarSenha()"></i>
                     </span>
                 </div>
@@ -28,7 +29,7 @@
                     <input class="defaultInput" type="email" placeholder="Email" id="email" required [(ngModel)]="user.email" name="email">
                     <div style="display: flex; align-items: center;">
                         <input class="defaultInput" type="{{ mostrarSenha ? 'text' : 'password' }}" placeholder="Senha" id="password" required [(ngModel)]="user.password" name="password">
-                        <span class="input-group-text" style="margin-left: 1%;">
+                        <span style="margin-left: 2%;">
                             <i class="bi bi-{{ mostrarSenha ? 'eye' : 'eye-slash' }}" (click)="toggleMostrarSenha()"></i>
                         </span>
                     </div>

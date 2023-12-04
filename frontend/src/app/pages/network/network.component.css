@@ -15,10 +15,12 @@
     align-items: center;
     border: 2px solid black;
     padding: 1%;
+    margin-top: 1%;
 }
 
 .name {
     font-size: 25px;
+    margin: 0;
 }
 
 .email {

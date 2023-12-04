@@ -40,7 +40,7 @@ export class UserService {
     return this.http.get(`${this.baseUrl}`);
   }
 
-  getUserLogin(email: string): Observable<any> {
+  getUserLogin(email: string | undefined): Observable<any> {
     return this.http.get(`${this.baseUrl}/${email}`);
   }
 }

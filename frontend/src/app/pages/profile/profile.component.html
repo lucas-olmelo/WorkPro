@@ -2,11 +2,5 @@
     <h1>Bem-vindo, {{loggedUser?.firstName}} {{loggedUser?.lastName}}</h1>
     <h2>{{loggedUser?.email}}</h2>
 
-    <h3>Upload de Foto</h3>
-    <form>
-      <input type="file" accept="image/*">
-      <button type="submit">Enviar Foto</button>
-    </form>
-
     <button class="logoutButton" (click)="logout()">Logout</button>
 </div>
