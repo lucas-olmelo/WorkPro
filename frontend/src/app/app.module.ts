@@ -49,7 +49,7 @@ export function tokenGetter() {
     CurriculoComponent,
     PedroComponent,
     LinsComponent,
-    MeloComponent,,
+    MeloComponent,
     NetworkComponent,
     LoginComponent
   ],

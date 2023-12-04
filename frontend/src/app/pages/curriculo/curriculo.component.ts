@@ -24,7 +24,7 @@ export class CurriculoComponent {
       phone: '(11) 95972-0351',
       github: 'https://github.com/lucas-olmelo',
       lindekin: 'https://www.linkedin.com/in/lucas-ol-melo/',
-      foto: 'https://avatars.githubusercontent.com/u/112345359?v=4'
+      foto: '../../../assets/melo.jpg'
     },{
       id:2,
       nome: 'Lucas da Silva Lins',

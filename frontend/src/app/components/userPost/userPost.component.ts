@@ -11,7 +11,7 @@ import { AuthenticationService } from 'src/app/services/authentication.service';
 })
 export class UserPostComponent {
 
-  constructor(private db: PostService, private auth: AuthenticationService) {}
+  constructor(private db: PostService, private auth: AuthenticationService, private router: Router) {}
 
   user = this.auth.getUserInfo()?.firstName + " " + this.auth.getUserInfo()?.lastName
   post: Post = new Post(this.user);  
@@ -27,8 +27,13 @@ export class UserPostComponent {
 
   onSubmit() {
     this.submitted = true;
-    this.save();   
-    this.reloadPage();
+
+    if(this.auth.isAuthenticated() === false){
+      this.router.navigate(['login']);
+    } else {
+      this.save();   
+      this.reloadPage();
+    }
   }
 
   reloadPage(){

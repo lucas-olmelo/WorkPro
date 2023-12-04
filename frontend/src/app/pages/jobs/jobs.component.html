@@ -1,5 +1,5 @@
 <div class="jobsContainer">
-    <div class="buttonContainer"><button class="createLink" *ngIf="createJob === false" (click)="createJob = true">Criar um anúncio de vaga</button></div>
+    <div class="buttonContainer"><button class="createLink" *ngIf="createJob === false" (click)="createButton">Criar um anúncio de vaga</button></div>
     <div class="createJob" *ngIf="createJob === true">
         <form (submit)="onSubmit()">
             <i class="bi bi-arrow-90deg-left" (click)="createJob = false"></i>

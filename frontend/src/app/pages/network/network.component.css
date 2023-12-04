@@ -1,0 +1,24 @@
+.usersContainer {
+    padding: 2%;
+}
+
+.title {
+    margin-bottom: 2%;
+    color: #00FAA8;
+}
+
+.user {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    border: 2px solid black;
+    padding: 1%;
+}
+
+.name {
+    font-size: 25px;
+}
+
+.email {
+    margin: auto 1%;
+}
